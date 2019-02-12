@@ -3,7 +3,7 @@
 Plugin Name: Pluginception - Codeable Spinup
 Plugin URI: https://dandulaney.com
 Description: A plugin to create other plugins (modified for Codeable). Pluginception.
-Version: 1.0
+Version: 1.1
 Author: Dan Dulaney (forked from a plugin by Otto)
 Author URI: https://dandulaney.com
 Text Domain: pluginception_codeable
@@ -30,8 +30,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 define("AUTHOR_NAME", "Dan Dulaney");
 define("AUTHOR_EMAIL", "dan.dulaney07@gmail.com");
 define("AUTHOR_SITE", "https://codeable.io/developers/dan-dulaney/");
@@ -243,8 +244,9 @@ License URI: {$_POST['pluginception_codeable_license_uri']}
 
 */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
 END;
 
@@ -294,10 +296,34 @@ END;
 
 }
 
+
+//Adds a sample function to plugin
+$header .= <<<END
+
+	
+if ( ! function_exists( '{$plugin_prefix}_example_function' ) ) {
+	/**
+	 * Sample Function to show best practices for checking exists. Remove or modify.
+	 *
+	 * @param
+	 * @return
+	 */
+	add_action( 'wp_head', '{$plugin_prefix}_example_function' );
+	function {$plugin_prefix}_example_function() {
+
+		echo '<!-- Pluginception Codeable SpinUp demo function is active  -->';
+		
+	}
+}
+
+
+END;
+
 	$blank_header = <<<END
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-
+if ( ! defined( 'ABSPATH' ) ) { 
+	exit; // Exit if accessed directly
+}
 END;
 
 	$css_file_header = <<<END
@@ -362,4 +388,3 @@ END;
 
 	return true;
 }
-
