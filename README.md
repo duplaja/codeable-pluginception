@@ -15,3 +15,6 @@ Version of Pluginception modified to spin up quick, functionally programmed plug
 * Upload modified file to (create if needed) yourdevsite/wp-content/mu-plugins/
 * Under the Admin > Plugins submenu, pick "Create Codeable Plugin"
 * Follow on-screen prompts
+
+## Thanks
+Thank you to [Francesco Carlucci](https://github.com/FrancescoCarlucci/) for the idea that prompted this plugin, and to [Otto](http://ottopress.com/) for the base Pluginception plugin
